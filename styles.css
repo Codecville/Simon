@@ -1,0 +1,156 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin:  5%;
+  color: #FEF2BF;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+/*
+var buttonColours = ["red", "blue", "green", "yellow"];
+
+var gamePattern = [];
+
+//3. At the top of the game.js file, create a new empty array with the name userClickedPattern.
+var userClickedPattern = [];
+
+//1. Use jQuery to detect when any of the buttons are clicked and trigger a handler function.
+$(".btn").click(function() {
+
+  //2. Inside the handler, create a new variable called userChosenColour to store the id of the button that got clicked.
+  var userChosenColour = $(this).attr("id");
+
+  //4. Add the contents of the variable userChosenColour created in step 2 to the end of this new userClickedPattern
+  userClickedPattern.push(userChosenColour);
+
+  //console.log(userClickedPattern);
+
+  playSound(userChosenColour);
+  animatePress(userChosenColour);
+
+  checkAnswer(userClickedPattern.length-1);
+
+});
+
+function playSound(id){
+    var sound = new Audio("sounds/" + id + ".mp3");
+    sound.play();
+}
+
+function animatePress(currentColor){
+    $('#' + currentColor).addClass('pressed');
+    setTimeout(function(){
+        $('#' + currentColor).removeClass('pressed');
+    }, 100);
+}
+
+var level = 1;
+
+var started = false;
+
+$(document).keypress(function() {
+  if (!started) {
+
+    //3. The h1 title starts out saying "Press A Key to Start", when the game has started, change this to say "Level 0".
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
+function checkAnswer(currentLevel){
+  if(gamePattern[currentLevel] === userClickedPattern[currentLevel]){
+    console.log('winner!!');
+
+    if(userClickedPattern.length === gamePattern.length){
+      setTimeout(function(){
+        nextSequence();
+      }, 1000);
+    }
+
+  }
+  else{
+    console.log('wrong');
+
+    startOver();
+
+    $('#level-title').text('Game Over, Press Any Key to Restart')
+
+    playSound('wrong');
+
+    $('body').addClass("game-over");
+    setTimeout(function(){
+      $('body').removeClass("game-over");
+    }, 500);
+  }
+
+}
+
+function startOver(){
+  gamePattern = [];
+  started = false;
+  level = 1;
+}
+
+function nextSequence() {
+
+  userClickedPattern = [];
+
+  var randomNumber = Math.floor(Math.random() * 4);
+  var randomChosenColour = buttonColours[randomNumber];
+  gamePattern.push(randomChosenColour);
+
+  $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+
+  $('#level-title').text('Level ' + level);
+  level++;
+  playSound(randomChosenColour);
+  
+}
+*/
